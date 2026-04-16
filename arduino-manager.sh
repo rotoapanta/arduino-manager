@@ -3,6 +3,56 @@
 # ==============================================================================
 #  Arduino IDE Manager
 # ==============================================================================
+#  Descripción:
+#    Script en Bash para instalar, gestionar, actualizar y desinstalar
+#    Arduino IDE AppImage en sistemas Linux, integrándolo como una aplicación
+#    nativa del usuario.
+#
+#  Funcionalidades:
+#    - Instalación desde un AppImage local
+#    - Instalación descargando desde una URL
+#    - Modo interactivo y no interactivo
+#    - Creación de comando lanzador: arduino
+#    - Creación de acceso en el menú de aplicaciones
+#    - Extracción automática de ícono desde el AppImage
+#    - Actualización de caché de escritorio e íconos
+#    - Sistema de logs
+#    - Actualización del AppImage instalado
+#    - Desinstalación limpia
+#    - Corrección de ejecución con --no-sandbox
+#
+#  Ubicaciones usadas:
+#    - AppImage:   ~/.local/opt/arduino/ArduinoIDE.AppImage
+#    - Lanzador:   ~/.local/bin/arduino
+#    - Desktop:    ~/.local/share/applications/arduino-ide.desktop
+#    - Ícono:      ~/.local/share/icons/hicolor/256x256/apps/arduino-ide.png
+#    - Logs:       ~/.local/state/arduino-manager/arduino-manager.log
+#
+#  Compatibilidad:
+#    - Ubuntu 22.04
+#    - Ubuntu 24.04
+#    - Otras distribuciones Linux compatibles con AppImage
+#
+#  Requisitos:
+#    - bash
+#    - wget o curl
+#    - chmod
+#    - cp
+#    - mkdir
+#    - find
+#    - mktemp
+#    - libfuse2 o equivalente del sistema
+#
+#  Autor:
+#    Roberto Toapanta
+#
+#  Licencia:
+#    MIT
+#
+#  Versión:
+#    1.2.0
+#
+# ==============================================================================
 
 set -euo pipefail
 
