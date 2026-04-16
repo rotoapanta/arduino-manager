@@ -200,7 +200,7 @@ Or from URL:
 
 ## Project Structure
 
-```
+```text
 arduino-manager/
 ├── arduino-manager.sh
 ├── README.md
