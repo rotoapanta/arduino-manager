@@ -188,16 +188,6 @@ O desde URL:
 
 ---
 
-## ¿Por qué AppImage en vez de APT?
-
-| Método   | Versión          | Recomendado |
-| -------- | ---------------- | ----------- |
-| APT      | Antigua/limitada | ❌           |
-| PPA      | Variable         | ⚠️          |
-| AppImage | Última versión   | ✅           |
-
----
-
 ## Estructura del Proyecto
 
 ```text
