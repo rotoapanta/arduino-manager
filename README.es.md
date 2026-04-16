@@ -49,13 +49,13 @@ El script automatiza todo el proceso: descarga o copia del AppImage, creación d
 
 Arduino IDE se instala en:
 
-```
+```bash
 ~/.local/opt/arduino/ArduinoIDE.AppImage
 ```
 
 El script también crea:
 
-```
+```bash
 ~/.local/bin/arduino
 ~/.local/share/applications/arduino-ide.desktop
 ~/.local/share/icons/hicolor/256x256/apps/arduino-ide.png
