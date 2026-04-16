@@ -10,53 +10,114 @@
 
 ---
 
-<p align="right"><strong>[ES]</strong> | <strong>[EN]</strong></p>
+<p align="right"><strong>[EN]</strong> | <a href="README.es.md">[ES]</a></p>
 
 # <p align="center">Arduino IDE Manager (Linux)</p>
 
 ---
 
-# 🇪🇸 Español
+## Description
 
-## Descripción
+**Arduino IDE Manager** is a Bash-based tool that allows you to install, manage, update, and uninstall the **Arduino IDE AppImage** on Linux systems, integrating it as a native desktop application.
 
-**Arduino IDE Manager** es una herramienta en Bash que permite instalar, gestionar, actualizar y desinstalar **Arduino IDE AppImage** en sistemas Linux, integrándolo como una aplicación nativa del sistema.
-
-El script automatiza completamente:
-
-- Instalación del AppImage  
-- Creación del comando CLI  
-- Integración en el menú de aplicaciones  
-- Configuración de ícono  
-- Manejo de compatibilidad (sandbox Electron)  
-
-Todo sin requerir privilegios de superusuario.
+The script automates the entire process: downloading or copying the AppImage, creating launchers, integrating it into the application menu, extracting icons, and enabling execution from the terminal — all without requiring root privileges.
 
 ---
 
-## Características
+## Features
 
-- Menú interactivo fácil de usar  
-- Modo no interactivo mediante CLI  
-- Instalación desde:
-  - AppImage local  
-  - URL remota  
-- Creación automática de:
-  - Comando CLI (`arduino`)  
-  - Acceso en el menú (.desktop)  
-  - Ícono de la aplicación  
-- Corrección automática de sandbox (`--no-sandbox`)  
-- Sistema de logs  
-- Actualización del AppImage  
-- Desinstalación limpia  
-- Instalación en espacio de usuario (`~/.local`)  
-- Compatible con:
-  - Ubuntu 22.04  
-  - Ubuntu 24.04  
+* Easy-to-use interactive menu
+* Non-interactive CLI mode
+* Installation from:
+  * Local AppImage file
+  * Remote URL
+* Automatic creation of:
+  * CLI command (`arduino`)
+  * Desktop entry (.desktop)
+  * Application icon
+* Automatic icon extraction from AppImage
+* Desktop database and icon cache refresh
+* Logging system
+* Update mechanism
+* Clean uninstall
+* User-space installation (`~/.local`)
+* Compatible with:
+  * Ubuntu 22.04
+  * Ubuntu 24.04
 
 ---
 
-## Estructura de instalación
+## Installation Structure
+
+Arduino IDE is installed in:
+
+~/.local/opt/arduino/ArduinoIDE.AppImage
+
+
+The script also creates:
+
+~/.local/bin/arduino
+~/.local/share/applications/arduino-ide.desktop
+~/.local/share/icons/hicolor/256x256/apps/arduino-ide.png
+
+
+Log file:
 
 ```bash
-~/.local/opt/arduino/ArduinoIDE.AppImage
+~/.local/state/arduino-manager/arduino-manager.log
+```
+
+Requirements
+Linux (Ubuntu recommended)
+Bash
+wget or curl
+find, chmod, mktemp
+libfuse2 (required for AppImage)
+
+Installation
+git clone https://github.com/TU_USUARIO/arduino-manager.git
+cd arduino-manager
+chmod +x arduino-manager.sh
+./arduino-manager.sh
+
+Usage
+Interactive Mode
+
+The script provides a menu:
+1) Install from local AppImage
+2) Install from URL
+3) Uninstall
+4) Exit
+
+Non-Interactive Mode (CLI)
+
+Install from local file:
+
+./arduino-manager.sh --install --from-file ~/Descargas/arduino-ide.AppImage
+Install from URL:
+./arduino-manager.sh --install --from-url "https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.8_Linux_64bit.AppImage"
+
+Update:
+./arduino-manager.sh --update --from-file ~/Descargas/arduino-ide_new.AppImage
+
+Uninstall:
+./arduino-manager.sh --remove
+
+Help:
+./arduino-manager.sh --help
+
+Version:
+./arduino-manager.sh --version
+
+Run Arduino IDE
+
+From terminal:
+
+arduino
+
+Or open it from your system applications menu.
+
+Uninstall
+./arduino-manager.sh --remove
+
+
