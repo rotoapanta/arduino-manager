@@ -96,7 +96,7 @@ chmod +x arduino-manager.sh
 
 Running the script without arguments launches the interactive menu:
 
-```
+```text
 ------------------------------------------------------------
 Arduino IDE AppImage Installer
 ------------------------------------------------------------
